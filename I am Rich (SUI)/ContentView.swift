@@ -9,20 +9,29 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack (alignment: .topLeading){
+        ZStack {
             Color(red: 36/255, green: 73/255, blue: 94/255).ignoresSafeArea()
-            Text("I Am Rich")
-                .font(.custom("Helvetica Neue", size: 40))
-                .foregroundColor(.white)
-                .offset(x: 124, y: 156)
-                .frame(width: 173.0, height: 48.0)
             
-            Image("austin")
+            Divider()
+                .frame(minHeight: 5)
+                .background(Color.red)
+            
+            Image("diamond")
                 .resizable()
-                .offset(x: 72, y: 313)
-                .frame(width: 270, height: 270)
                 .scaledToFit()
-                .aspectRatio(contentMode: .fit)
+                .frame(width: 270, height: 270)
+            
+            VStack {
+                HStack() {
+                    Text("I Am Rich")
+                        .font(.custom("Helvetica Neue", size: 40))
+                        .foregroundColor(.white)
+                }
+                .frame(maxHeight: .infinity)
+                
+                HStack { }
+                    .frame(maxHeight: .infinity)
+            }
         }
     }
 }
