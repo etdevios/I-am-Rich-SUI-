@@ -9,13 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        ZStack (alignment: .topLeading){
+            Color(red: 36/255, green: 73/255, blue: 94/255).ignoresSafeArea()
+            Text("I Am Rich")
+                .font(.custom("Helvetica Neue", size: 40))
+                .foregroundColor(.white)
+                .offset(x: 124, y: 156)
+                .frame(width: 173.0, height: 48.0)
+            
+            Image("austin")
+                .resizable()
+                .offset(x: 72, y: 313)
+                .frame(width: 270, height: 270)
+                .scaledToFit()
+                .aspectRatio(contentMode: .fit)
         }
-        .padding()
     }
 }
 
